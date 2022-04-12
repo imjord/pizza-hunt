@@ -17,9 +17,9 @@ function getPizza() {
   // get pizzaInfo
   fetch(`/api/pizzas/${pizzaId}`)
     .then(response => {
-      console.log(response);
+      
       if (!response.ok) {
-        console.log('hi');
+       
         throw new Error({ message: 'Something went wrong!' });
       }
 
@@ -34,7 +34,7 @@ function getPizza() {
 }
 
 function printPizza(pizzaData) {
-  console.log(pizzaData);
+  
 
   pizzaId = pizzaData._id;
 
@@ -127,7 +127,7 @@ function handleNewCommentSubmit(event) {
       response.json();
     })
     .then(commentResponse => {
-      console.log(commentResponse);
+     
       // location.reload();
     })
     .catch(err => {
@@ -168,7 +168,7 @@ function handleNewReplySubmit(event) {
       response.json();
     })
     .then(commentResponse => {
-      console.log(commentResponse);
+    
       location.reload();
     })
     .catch(err => {

@@ -3,7 +3,7 @@ const { Comment, Pizza } = require('../models');
 const commentController = {
   // add comment to pizza
   addComment({ params, body }, res) {
-    console.log(params);
+   
     Comment.create(body)
       .then(({ _id }) => {
         return Pizza.findOneAndUpdate(
@@ -13,7 +13,7 @@ const commentController = {
         );
       })
       .then(dbPizzaData => {
-        console.log(dbPizzaData);
+       
         if (!dbPizzaData) {
           res.status(404).json({ message: 'No pizza found with this id!' });
           return;
